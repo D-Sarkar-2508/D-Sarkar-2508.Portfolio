@@ -1,9 +1,8 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Hi!%20I%20am%20Ditipriya%20%F0%9F%91%8B&fontSize=48&fontColor=fff&animation=twinkling&fontAlignY=36&desc=Python%20%7C%20C%20%7C%20SQL%20%7C%20Java&descAlignY=58&descSize=20"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Hi!%20Its%20Ditipriya's%20Portfolio%20%F0%9F%91%8B&fontSize=48&fontColor=fff&animation=twinkling&fontAlignY=36"/>
 
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=Building+AI+%26+Full-Stack+Web+Applications;3rd+Year+CSE+(AIML)+Student;Passionate+about+Data+Science+%26+AI%2FML;Always+learning+%7C+Always+building)](https://git.io/typing-svg)
+### Click here to get access to my portfolio 👇
 
 </div>
 
@@ -17,22 +16,6 @@
 
 ---
 
-## 🔥 Features
-
-| Feature | Description |
-|--------|-------------|
-| ⚡ **Custom Cursor** | Animated purple cursor with smooth trailing ring |
-| 🌑 **Dark Theme** | Deep dark aesthetic with purple & green accents |
-| 🎞️ **Scroll Animations** | Smooth reveal animations triggered on scroll |
-| 📱 **Fully Responsive** | Looks great on mobile, tablet & desktop |
-| 🧭 **Smooth Navigation** | Scroll-spy nav with active section highlighting |
-| 🎯 **Skills Grid** | Clean icon-based tech stack display |
-| 🗺️ **Learning Roadmap** | Phase-by-phase progress timeline |
-| 📬 **Contact Section** | Direct email link & social connections |
-| ⚡ **Zero Dependencies** | No npm, no bundlers — just one HTML file |
-
----
-
 ## 🛠️ Tech Stack
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -43,7 +26,6 @@
 ---
 
 ## 📁 Project Structure
-
 ```
 D-Sarkar-2508.Portfolio/
 ├── 📄 index.html        ← The entire portfolio (HTML + CSS + JS)
