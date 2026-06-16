@@ -335,6 +335,19 @@
     padding: 0.25rem 0.7rem;
     letter-spacing: 0.05em;
   }
+  .project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+  .project-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+  }
+  .project-link.gh { color: var(--accent2); }
+  .project-link.demo { color: var(--accent); }
 
   /* ROADMAP */
   #roadmap {}
@@ -553,6 +566,7 @@
     <div class="skills-grid">
       <div class="skill-item"><span class="skill-icon">🐬</span><span class="skill-name">MySQL</span></div>
       <div class="skill-item"><span class="skill-icon">🪶</span><span class="skill-name">SQLite</span></div>
+      <div class="skill-item"><span class="skill-icon">🐘</span><span class="skill-name">PostgreSQL</span></div>
       <div class="skill-item"><span class="skill-icon">💻</span><span class="skill-name">VS Code</span></div>
     </div>
   </div>
@@ -563,10 +577,57 @@
   <div class="section-tag">03 — Work</div>
   <h2 class="section-title">Featured Projects</h2>
   <div class="projects-grid reveal">
+
+    <!-- DS Hospital Management System -->
+    <div class="project-card">
+      <span class="project-tag">Full-Stack · Healthcare</span>
+      <div class="project-name">DS Hospital Management System</div>
+      <p class="project-desc">A production-grade multi-portal hospital management system supporting five roles — Patient, Doctor, Pharmacist, Receptionist, and Admin. Features appointment booking, prescription management, lab test tracking, pharmacy reports, and a unified admin dashboard. Deployed live on Render.</p>
+      <div class="project-techs">
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">Flask</span>
+        <span class="tech-pill">SQLAlchemy</span>
+        <span class="tech-pill">SQLite</span>
+        <span class="tech-pill">Jinja2</span>
+        <span class="tech-pill">HTML5</span>
+        <span class="tech-pill">CSS3</span>
+        <span class="tech-pill">JavaScript</span>
+        <span class="tech-pill">Docker</span>
+        <span class="tech-pill">Render</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/D-Sarkar-2508/Hospital-Management-System" target="_blank" class="project-link gh">GitHub ↗</a>
+        <a href="https://ds-hospital.onrender.com" target="_blank" class="project-link demo">Live Demo ↗</a>
+      </div>
+    </div>
+
+    <!-- Student Registration System -->
+    <div class="project-card">
+      <span class="project-tag">Full-Stack · EdTech</span>
+      <div class="project-name">Student Registration &amp; Management System</div>
+      <p class="project-desc">A role-based academic management platform with separate portals for Students and Admins. Students can register, manage their profile, and generate a digital ID card. Admins get a dashboard with full CRUD, smart search, branch/year filters, and stats. Backed by cloud PostgreSQL on Supabase.</p>
+      <div class="project-techs">
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">Flask</span>
+        <span class="tech-pill">SQLAlchemy</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">Supabase</span>
+        <span class="tech-pill">HTML5</span>
+        <span class="tech-pill">CSS3</span>
+        <span class="tech-pill">JavaScript</span>
+        <span class="tech-pill">Render</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/D-Sarkar-2508/Student-Registration-System-and-Management" target="_blank" class="project-link gh">GitHub ↗</a>
+        <a href="https://student-registration-system-and.onrender.com" target="_blank" class="project-link demo">Live Demo ↗</a>
+      </div>
+    </div>
+
+    <!-- Tic-Tac-Toe -->
     <div class="project-card">
       <span class="project-tag">Web App · Game</span>
       <div class="project-name">Tic-Tac-Toe Modern</div>
-      <p class="project-desc">A sleek, responsive, and modern Tic-Tac-Toe web application with symbol selection, real-time turn indicator, smart win/draw detection, undo function, and a fully responsive modern UI. Deployed on Hugging Face Spaces.</p>
+      <p class="project-desc">A sleek, responsive Tic-Tac-Toe web application with symbol selection, real-time turn indicator, smart win/draw detection, undo function, and a fully responsive modern UI. Deployed on Hugging Face Spaces.</p>
       <div class="project-techs">
         <span class="tech-pill">Python</span>
         <span class="tech-pill">Flask</span>
@@ -575,16 +636,19 @@
         <span class="tech-pill">JavaScript</span>
         <span class="tech-pill">Docker</span>
       </div>
-      <div style="margin-top:1.5rem; display:flex; gap:1rem;">
-        <a href="https://github.com/D-Sarkar-2508/Tic_Tac_Toe" target="_blank" style="font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--accent2); text-decoration:none; letter-spacing:0.1em;">GitHub ↗</a>
-        <a href="#" target="_blank" style="font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--accent); text-decoration:none; letter-spacing:0.1em;">Live Demo ↗</a>
+      <div class="project-links">
+        <a href="https://github.com/D-Sarkar-2508/Tic_Tac_Toe" target="_blank" class="project-link gh">GitHub ↗</a>
+        <a href="#" target="_blank" class="project-link demo">Live Demo ↗</a>
       </div>
     </div>
+
+    <!-- Coming Soon -->
     <div class="project-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0.4; border-style:dashed;">
       <div style="font-size:2rem; margin-bottom:1rem;">＋</div>
       <div class="project-name" style="font-size:1rem;">More Projects Coming</div>
       <p class="project-desc" style="font-size:0.85rem; margin-top:0.5rem;">Currently building...</p>
     </div>
+
   </div>
 </section>
 
