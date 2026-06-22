@@ -280,8 +280,10 @@
   /* PROJECTS */
   #projects { background: var(--bg2); }
   .projects-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; border: 1px solid var(--border);
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem; 
+    width: 100%;
   }
   .project-card {
     background: var(--card);
