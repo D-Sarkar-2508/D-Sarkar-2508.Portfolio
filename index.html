@@ -55,10 +55,10 @@ h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;line-height:1.05;letter-sp
 .gh h3{font:.7rem 'JetBrains Mono',monospace;color:var(--b);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
 .st{display:flex;gap:2rem}.st b{display:block;font-size:1.7rem;line-height:1.2;color:var(--a)}.st small{color:var(--mu);font-size:.8rem}
 .bt{display:flex;flex-wrap:wrap;gap:.8rem}
-.ph{width:min(340px,80%);aspect-ratio:3/4;border-radius:28px;overflow:hidden;border:1px solid var(--bd);justify-self:center;box-shadow:0 0 0 9px rgba(181,123,238,.08),0 30px 80px rgba(181,123,238,.22)}
+.ph{width:min(380px,80%);aspect-ratio:1/1;border-radius:28px;overflow:hidden;border:1px solid var(--bd);justify-self:center;box-shadow:0 0 0 9px rgba(181,123,238,.08),0 30px 80px rgba(181,123,238,.22)}
 .ph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.ab img{width:100%;max-width:340px;border-radius:22px;aspect-ratio:3/4;object-fit:cover;object-position:top;border:1px solid var(--bd);display:block;margin-bottom:1rem}
+.ab img{width:100%;max-width:340px;border-radius:22px;aspect-ratio:1/1;object-fit:cover;object-position:top;border:1px solid var(--bd);display:block;margin-bottom:1rem}
 .ab p,.tx p{color:var(--mu);margin-bottom:1.1rem}.tx strong{color:var(--tx)}
 .row{display:grid;grid-template-columns:140px 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--bd);font-size:.94rem}
 .row span:first-child{font:.68rem 'JetBrains Mono',monospace;color:var(--a);letter-spacing:.12em;text-transform:uppercase;padding-top:.2rem}
@@ -135,14 +135,14 @@ footer{padding:2rem 6vw;border-top:1px solid var(--bd);display:flex;justify-cont
       <a href="#contact" class="btn">Contact Me</a>
     </div>
   </div>
-  <div class="ph"><img src="assets/profile.jpg" alt="Ditipriya Sarkar"/></div>
+  <div class="ph"><img src="https://avatars.githubusercontent.com/u/274437234?v=4&amp;s=600" alt="Ditipriya Sarkar" onerror="this.onerror=null;this.src='assets/profile.jpg'"/></div>
 </section>
 
 <section id="about" class="alt">
   <div class="tg">01 — Get to know me</div><h2>About Me</h2><p class="sub">A bit about who I am and what I'm building toward</p>
   <div class="g2 rv">
     <div class="ab">
-      <img src="assets/profile.jpg" alt="Ditipriya Sarkar" loading="lazy"/>
+      <img src="https://avatars.githubusercontent.com/u/274437234?v=4&amp;s=600" alt="Ditipriya Sarkar" loading="lazy" onerror="this.onerror=null;this.src='assets/profile.jpg'"/>
       <div class="tx">
         <p>I'm <strong>Ditipriya Sarkar</strong>, a passionate developer at the intersection of <strong>AI Engineering</strong> and <strong>modern full-stack web technologies</strong> — driven by curiosity and a love for clean, impactful code.</p>
         <p>My current focus is <strong>Web Development &amp; AI/ML Engineering</strong>. I'm building toward <strong>Software Engineer</strong>, <strong>Full-Stack Developer</strong> and <strong>ML/AI Engineer</strong> roles.</p>
@@ -179,9 +179,8 @@ footer{padding:2rem 6vw;border-top:1px solid var(--bd);display:flex;justify-cont
 </section>
 
 <section id="projects" class="alt">
-  <div class="tg">03 — Work</div><h2>Featured Projects</h2><p class="sub">Built end-to-end — repository details pulled live from GitHub</p>
+  <div class="tg">03 — Work</div><h2>Featured Projects</h2><p class="sub">Built end-to-end — pulled live from GitHub and updated automatically</p>
   <div class="pg" id="pg"></div>
-  <div id="more"></div>
 </section>
 
 <section id="github">
@@ -213,10 +212,11 @@ footer{padding:2rem 6vw;border-top:1px solid var(--bd);display:flex;justify-cont
 </section>
 
 <section id="contact">
-  <div class="tg">06 — Reach out</div><h2>Get in Touch</h2><p class="sub">Open to internships, collaborations and full-time roles</p>
+  <div class="tg">06 — Reach out</div><h2>Get in Touch</h2><p class="sub">Open to internships, collaborations and full-time roles — messages go straight to my inbox</p>
   <div class="g2 rv">
     <form class="fm" id="fm">
       <h3>Send a message ✉️</h3>
+      <input id="fh" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
       <input id="fn" placeholder="Your name" required/>
       <input id="fe" type="email" placeholder="Your email" required/>
       <input id="fs" placeholder="Subject" required/>
@@ -240,12 +240,14 @@ footer{padding:2rem 6vw;border-top:1px solid var(--bd);display:flex;justify-cont
 const USER='D-Sarkar-2508';
 /* Add your SmartAgro links here (leave '' to hide the buttons) */
 const SMARTAGRO_GH='', SMARTAGRO_DEMO='';
+const EXCLUDE=[USER,'D-Sarkar-2508.Portfolio']; /* repos hidden from the project list */
+/* Optional hand-written details. Any other repo you push is added automatically from GitHub data. */
 const P=[
-{r:'Hospital-Management-System',t:'DS Hospital Management System',g:'Full-Stack · Healthcare',d:'Multi-portal hospital management system with five roles — Patient, Doctor, Pharmacist, Receptionist and Admin. Covers appointment booking, prescriptions, lab test tracking, pharmacy reports and a unified admin dashboard.',k:['Python','Flask','SQLAlchemy','SQLite','Jinja2','Docker','Render'],demo:'https://ds-hospital.onrender.com'},
-{r:'Student-Registration-System-and-Management',t:'Student Registration & Management System',g:'Full-Stack · EdTech',d:'Role-based platform with separate Student and Admin portals. Students register, update profiles and print a digital ID card; admins get a dashboard with CRUD, search, branch/year filters and stats, backed by cloud PostgreSQL.',k:['Python','Flask','SQLAlchemy','PostgreSQL','Supabase','Render'],demo:'https://student-registration-system-and.onrender.com'},
-{r:'Expense-tracker',t:'Expense Tracker',g:'Full-Stack · Finance',d:'Multi-user personal finance app with full expense CRUD, 8 categories, smart search and interactive doughnut and bar charts for monthly and yearly analytics, in a dark-themed UI.',k:['Python','Flask','Flask-Login','PostgreSQL','Chart.js','Render'],demo:'https://expense-tracker-v9a6.onrender.com'},
-{r:'Tic_Tac_Toe',t:'Tic-Tac-Toe Modern',g:'Web App · Game',d:'Responsive two-player game with X/O selection, live turn indicator, win/draw detection and an undo button. Containerized with Docker and deployed on Hugging Face Spaces.',k:['Python','Flask','JavaScript','Docker','Hugging Face'],demo:'https://coder-diya-tic-tac-toe.hf.space'},
-{r:null,t:'SmartAgro — AI Advisory Intelligence',g:'AI · Agriculture',d:'AI-powered crop advisory PWA with dashboard, disease diagnosis, mandi market prices and weather alerts, using GIS mapping, government market data and NDVI satellite data.',k:['Python','Flask','Groq API','Gemini API','Leaflet.js','Hugging Face'],gh:SMARTAGRO_GH,demo:SMARTAGRO_DEMO}
+{re:/hospital/i,t:'DS Hospital Management System',g:'Full-Stack · Healthcare',d:'Multi-portal hospital management system with five roles — Patient, Doctor, Pharmacist, Receptionist and Admin. Covers appointment booking, prescriptions, lab test tracking, pharmacy reports and a unified admin dashboard.',k:['Python','Flask','SQLAlchemy','SQLite','Jinja2','Docker','Render'],demo:'https://ds-hospital.onrender.com'},
+{re:/student-registration/i,t:'Student Registration & Management System',g:'Full-Stack · EdTech',d:'Role-based platform with separate Student and Admin portals. Students register, update profiles and print a digital ID card; admins get a dashboard with CRUD, search, branch/year filters and stats, backed by cloud PostgreSQL.',k:['Python','Flask','SQLAlchemy','PostgreSQL','Supabase','Render'],demo:'https://student-registration-system-and.onrender.com'},
+{re:/expense/i,t:'Expense Tracker',g:'Full-Stack · Finance',d:'Multi-user personal finance app with full expense CRUD, 8 categories, smart search and interactive doughnut and bar charts for monthly and yearly analytics, in a dark-themed UI.',k:['Python','Flask','Flask-Login','PostgreSQL','Chart.js','Render'],demo:'https://expense-tracker-v9a6.onrender.com'},
+{re:/tic.?tac/i,t:'Tic-Tac-Toe Modern',g:'Web App · Game',d:'Responsive two-player game with X/O selection, live turn indicator, win/draw detection and an undo button. Containerized with Docker and deployed on Hugging Face Spaces.',k:['Python','Flask','JavaScript','Docker','Hugging Face'],demo:'https://coder-diya-tic-tac-toe.hf.space'},
+{re:/smart.?agro/i,keep:true,t:'SmartAgro — AI Advisory Intelligence',g:'AI · Agriculture',d:'AI-powered crop advisory PWA with dashboard, disease diagnosis, mandi market prices and weather alerts, using GIS mapping, government market data and NDVI satellite data.',k:['Python','Flask','Groq API','Gemini API','Leaflet.js','Hugging Face'],gh:SMARTAGRO_GH,demo:SMARTAGRO_DEMO}
 ];
 const $=id=>document.getElementById(id);
 const GH=p=>fetch('https://api.github.com'+p).then(r=>{if(!r.ok)throw 0;return r.json()});
@@ -276,42 +278,66 @@ document.querySelectorAll('section').forEach(s=>spy.observe(s));
 function count(el,n){el.dataset.v=n;let c=0;const st=Math.max(1,Math.ceil(n/30));const iv=setInterval(()=>{c=Math.min(n,c+st);el.textContent=c;if(c>=n)clearInterval(iv)},30)}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* projects */
-function render(map){
-  $('pg').innerHTML=P.map(p=>{
-    const m=p.r&&map[p.r];const gh=p.r?'https://github.com/'+USER+'/'+p.r:p.gh;
-    const meta=m?[m.language,'★ '+m.stargazers_count,'Updated '+new Date(m.pushed_at).toLocaleDateString('en-GB',{month:'short',year:'numeric'})].filter(Boolean).join(' · '):'';
-    return `<div class="card pc rv v"><span class="pt">${esc(p.g)}</span><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>
-    <div class="tp">${p.k.map(k=>`<span>${esc(k)}</span>`).join('')}</div>${meta?`<div class="mt">${esc(meta)}</div>`:''}
-    <div class="lk">${gh?`<a href="${gh}" target="_blank" rel="noopener">GitHub ↗</a>`:''}${p.demo?`<a href="${p.demo}" target="_blank" rel="noopener">Live Demo ↗</a>`:''}</div></div>`}).join('');
+/* projects: every public repo is shown automatically */
+const pretty=n=>n.replace(/[-_.]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+const fmt=r=>[r.language,'★ '+r.stargazers_count,'Updated '+new Date(r.pushed_at).toLocaleDateString('en-GB',{month:'short',year:'numeric'})].filter(Boolean).join(' · ');
+const card=c=>`<div class="card pc rv v"><span class="pt">${esc(c.g)}</span><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p>
+  <div class="tp">${c.k.map(k=>`<span>${esc(k)}</span>`).join('')}</div>${c.meta?`<div class="mt">${esc(c.meta)}</div>`:''}
+  <div class="lk">${c.gh?`<a href="${esc(c.gh)}" target="_blank" rel="noopener">GitHub ↗</a>`:''}${c.demo?`<a href="${esc(c.demo)}" target="_blank" rel="noopener">Live Demo ↗</a>`:''}</div></div>`;
+function render(repos){
+  const list=(repos||[]).filter(r=>!r.fork&&!EXCLUDE.includes(r.name)),used=new Set(),out=[];
+  P.forEach(p=>{const m=list.find(r=>p.re.test(r.name)&&!used.has(r.name));if(m)used.add(m.name);
+    if(m||p.keep||!repos)out.push(card({g:p.g,t:p.t,d:p.d,k:p.k,gh:m?m.html_url:p.gh,demo:p.demo||(m&&m.homepage)||'',meta:m?fmt(m):''}))});
+  list.filter(r=>!used.has(r.name)).sort((a,b)=>new Date(b.pushed_at)-new Date(a.pushed_at)).forEach(r=>
+    out.push(card({g:r.language||'Repository',t:pretty(r.name),d:r.description||'Details coming soon — add a description to this repository on GitHub and it will appear here.',k:[...(r.topics||[]),...(r.language?[r.language]:[])],gh:r.html_url,demo:r.homepage||'',meta:fmt(r)})));
+  $('pg').innerHTML=out.join('');
 }
-render({});
+render(null);
 
-/* GitHub API */
-GH('/users/'+USER).then(u=>{count($('s1'),u.public_repos);count($('s2'),u.followers);count($('s3'),u.following);count($('h1'),u.public_repos);count($('h3'),u.followers)}).catch(()=>{});
-GH('/users/'+USER+'/repos?per_page=100&sort=pushed').then(async repos=>{
-  const map={};repos.forEach(r=>map[r.name]=r);render(map);
-  count($('h2'),repos.reduce((a,r)=>a+r.stargazers_count,0));
-  const feat=P.map(p=>p.r);
-  const rest=repos.filter(r=>!r.fork&&r.name!==USER&&!feat.includes(r.name));
-  if(rest.length)$('more').innerHTML='<h3 class="tg" style="margin:2.5rem 0 1rem">More on GitHub</h3><div class="pg">'+rest.map(r=>`<div class="card pc"><h3>${esc(r.name)}</h3><p>${esc(r.description||'Public repository')}</p><div class="mt">${esc([r.language,'★ '+r.stargazers_count].filter(Boolean).join(' · '))}</div><div class="lk"><a href="${r.html_url}" target="_blank" rel="noopener">GitHub ↗</a>${r.homepage?`<a href="${esc(r.homepage)}" target="_blank" rel="noopener">Live ↗</a>`:''}</div></div>`).join('')+'</div>';
-  /* language breakdown (bytes, fallback to repo count) */
+/* GitHub numbers — fetched live, refreshed every 2 minutes and when you return to the tab */
+const set=(id,n)=>{const e=$(id);if(e&&e.dataset.v!=n)count(e,n)};
+async function langs(repos){
   const tot={};
   const res=await Promise.allSettled(repos.filter(r=>!r.fork).map(r=>GH('/repos/'+USER+'/'+r.name+'/languages')));
   res.forEach(x=>x.status==='fulfilled'&&Object.entries(x.value).forEach(([l,b])=>tot[l]=(tot[l]||0)+b));
   if(!Object.keys(tot).length)repos.forEach(r=>r.language&&(tot[r.language]=(tot[r.language]||0)+1));
   const sum=Object.values(tot).reduce((a,b)=>a+b,0)||1;
-  const top=Object.entries(tot).sort((a,b)=>b[1]-a[1]).slice(0,6);
   $('h4').textContent=Object.keys(tot).length;
-  $('lg').innerHTML=top.map(([l,b])=>`<div class="lb"><span>${esc(l)}</span><div class="bar"><i data-w="${(b/sum*100).toFixed(1)}"></i></div><span>${(b/sum*100).toFixed(1)}%</span></div>`).join('');
+  $('lg').innerHTML=Object.entries(tot).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,b])=>`<div class="lb"><span>${esc(l)}</span><div class="bar"><i data-w="${(b/sum*100).toFixed(1)}"></i></div><span>${(b/sum*100).toFixed(1)}%</span></div>`).join('');
   setTimeout(()=>document.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),100);
-}).catch(()=>{$('lg').innerHTML='<p class="mt">GitHub data is temporarily unavailable (API rate limit). Please refresh later.</p>'});
+}
+let sig='',last=0;
+async function load(){
+  last=Date.now();
+  try{
+    const [u,repos]=await Promise.all([GH('/users/'+USER),GH('/users/'+USER+'/repos?per_page=100&sort=pushed')]);
+    set('s1',u.public_repos);set('s2',u.followers);set('s3',u.following);set('h1',u.public_repos);set('h3',u.followers);
+    set('h2',repos.reduce((a,r)=>a+r.stargazers_count,0));
+    const g=repos.map(r=>[r.name,r.pushed_at,r.stargazers_count,r.description,r.homepage,r.fork].join('|')).join('~');
+    if(g!==sig){sig=g;render(repos);await langs(repos)}
+  }catch(e){if(!sig)$('lg').innerHTML='<p class="mt">GitHub data is temporarily unavailable (API rate limit). Please refresh later.</p>'}
+}
+load();setInterval(load,120000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-last>30000)load()});
 
-/* contact form -> opens the visitor's email app */
-$('fm').onsubmit=e=>{e.preventDefault();
-  const body=`Hi Ditipriya,\n\n${$('fmsg').value}\n\n— ${$('fn').value} (${$('fe').value})`;
-  location.href=`mailto:ditipriya2508@gmail.com?subject=${encodeURIComponent($('fs').value)}&body=${encodeURIComponent(body)}`;
-  const t=$('toast');t.textContent='Opening your email app…';t.style.opacity=1;setTimeout(()=>t.style.opacity=0,2800)};
+/* contact form -> delivered to my email via FormSubmit (falls back to the visitor's email app) */
+function toast(m){const t=$('toast');t.textContent=m;t.style.opacity=1;setTimeout(()=>t.style.opacity=0,3800)}
+$('fm').onsubmit=async e=>{e.preventDefault();
+  if($('fh').value)return;
+  const f=e.target,b=f.querySelector('button'),d={name:$('fn').value,email:$('fe').value,subject:$('fs').value,message:$('fmsg').value};
+  b.disabled=true;b.textContent='Sending…';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/ditipriya2508@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({...d,_subject:'Portfolio message: '+d.subject,_template:'table',_captcha:'false'})});
+    const j=await r.json();
+    if(!r.ok||String(j.success)!=='true')throw 0;
+    f.reset();toast('✅ Message sent! I will get back to you soon.');
+  }catch(err){
+    toast('Could not send directly — opening your email app instead…');
+    location.href=`mailto:ditipriya2508@gmail.com?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(d.message+'\n\n— '+d.name+' ('+d.email+')')}`;
+  }
+  b.disabled=false;b.textContent='Send Message ↗';
+};
 </script>
 </body>
 </html>
